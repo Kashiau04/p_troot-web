@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-inter",   // カスタムプロパティ化
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  subsets: ["latin"],   // 日本語フォントでも "latin" が必要
+  weight: ["400", "500", "700"], // 必要なウェイトを指定
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,10 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${zenKakuGothicNew.className}`}
       >
+        <Header />
         {children}
       </body>
     </html>
