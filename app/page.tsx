@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Heading from "./components/Heading";
 
 export default function Home() {
   return (
@@ -22,24 +23,11 @@ export default function Home() {
           </div>
         </section>
         <section id="about" className="min-h-screen flex flex-col px-5 bg-gray-300 md:px-20">
-          <div className="flex items-start">
-            <Image
-              className="w-5 mt-0.5"
-              src="/images/sakura-white.svg"
-              alt="sakura"
-              width={16}
-              height={20.82}
-              priority
-            />
-            <div className="flex flex-col ml-2.5 text-white">
-              <h2 className="text-[20px] font-medium font-inter">
-                ABOUT
-              </h2>
-              <p className="text-[12px] font-medium mt-2.5">
-                私たちについて
-              </p>
-            </div>
-          </div>
+          <Heading
+            title="ABOUT"
+            subtitle="私たちについて"
+            color="white"
+          />
           <div className="lg:px-15 lg:flex lg:justify-between lg:items-start">
             <p className="text-left text-[24px] text-primary-brown text-medium mt-12.5 md:text-[3rem]">
               株式会社T・ROOTは、<br />
@@ -62,24 +50,47 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section id="service" className="min-h-screen flex flex-col">
-          <div className="flex items-start">
+        <section id="service" className="min-h-screen flex flex-col px-5 bg-gray-300 md:px-20 text-primary-brown">
+          <Heading
+            title="SERVICE"
+            subtitle="サービス"
+            color="pink"
+          />
+          <div className="flex flex-col justify-center items-center mt-24">
             <Image
-              className="w-5 mt-0.5"
-              src="/images/sakura-pink.svg"
-              alt="sakura"
-              width={16}
-              height={20.82}
+              className="w-14.5"
+              src="/images/recruit-icon.svg"
+              alt="recruit"
+              width={58}
+              height={46.68}
               priority
             />
-            <div className="flex flex-col ml-2.5 text-primary-pink">
-              <h2 className="text-[20px] font-medium font-inter">
-                SERVICE
-              </h2>
-              <p className="text-[12px] font-medium mt-2.5">
-                私たちのサービス
-              </p>
-            </div>
+            <h2 className="mt-4 text-[1.25rem]">
+              採用代行（RPO）
+            </h2>
+            <p className="mt-3 text-[0.875rem]">
+              求人掲載から選考管理、面接調整まで、<br />
+              採用プロセス全般を代行し、<br />
+              効率的で質の高い採用活動を実現します。
+            </p>
+          </div>
+          <div className="flex flex-col justify-center items-center mt-45">
+            <Image
+              className="w-10"
+              src="/images/leaf-icon.svg"
+              alt="leaf"
+              width={40}
+              height={44}
+              priority
+            />
+             <h2 className="mt-4 text-[1.25rem]">
+              人材定着支援
+            </h2>
+            <p className="mt-3 text-[0.875rem]">
+              入社後のフォローや教育プログラムの<br />
+              設計を通じて、長期的な定着と組織の<br />
+              安定化を支援します。
+            </p>
           </div>
         </section>
       </main>
