@@ -1,17 +1,17 @@
-import Image from "next/image"
+import Image from 'next/image';
 
 const navItems = [
-  { label: "about", href: "" },
-  { label: "service", href: "" },
-  { label: "company", href: "" },
-  { label: "contact", href: "" },
-]
+  { label: 'about', href: '' },
+  { label: 'service', href: '' },
+  { label: 'company', href: '' },
+  { label: 'contact', href: '' },
+];
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full flex justify-between items-center px-8 py-4 z-10">
+    <header className="fixed top-0 left-0 z-10 flex w-full items-center justify-between px-8 py-4">
       <h1>
-        <Image 
+        <Image
           className="w-27 md:w-37"
           src="/images/logo.png"
           alt="troot"
@@ -30,7 +30,7 @@ export default function Header() {
             height={20.82}
             priority
           />
-          <span className="text-xs text-[#88646A] font-bold">MENU</span>
+          <span className="text-xs font-bold text-[#88646A]">MENU</span>
         </button>
         <nav className="hidden md:block">
           <ul className="flex gap-x-10 text-base font-medium uppercase">
@@ -43,5 +43,5 @@ export default function Header() {
         </nav>
       </div>
     </header>
-  )
+  );
 }
