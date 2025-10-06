@@ -20,7 +20,7 @@ export default function Header() {
           priority
         />
       </h1>
-      <div className="font-inter">
+      <div className="font-inter text-primary-brown font-medium">
         <button className="justify-items-center md:hidden">
           <Image
             className="w-5"
@@ -30,10 +30,12 @@ export default function Header() {
             height={20.82}
             priority
           />
-          <span className="text-xs font-bold text-[#88646A]">MENU</span>
+          <span className="text-primary-brown text-[0.75rem] font-bold">
+            MENU
+          </span>
         </button>
         <nav className="hidden md:block">
-          <ul className="flex gap-x-10 text-base font-medium uppercase">
+          <ul className="flex gap-x-10 text-[1rem] font-medium uppercase">
             {navItems.map((item, index) => (
               <li key={index}>
                 <a href={item.href}>{item.label}</a>

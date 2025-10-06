@@ -25,10 +25,10 @@ export default function AboutItem({ title, subtitle, color }: AboutItemProps) {
         priority
       />
       <hgroup className={`ml-2.5 flex flex-col ${textColor}`}>
-        <h2 className="font-inter text-[20px] font-medium uppercase">
+        <h2 className="font-inter text-[1.25rem] font-medium uppercase">
           {title}
         </h2>
-        <p className="mt-2.5 text-[12px] font-medium">{subtitle}</p>
+        <p className="mt-2.5 text-[0.75rem] font-medium">{subtitle}</p>
       </hgroup>
     </div>
   );
