@@ -24,9 +24,9 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div className="relative">
-      <div className="absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute  w-80 top-[59%] left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-100">
         <Image
-          className="h-full w-full"
+          className="w-full h-full"
           src={`/images/${bgImage.name}.svg`}
           alt="background blue"
           width={350}
@@ -34,7 +34,7 @@ export default function ServiceCard({
           priority
         />
       </div>
-      <div className="relative flex flex-col items-center justify-center gap-y-4">
+      <div className="relative flex flex-col items-center justify-center">
         <Image
           className={image.className}
           src={`/images/${image.name}.svg`}
@@ -43,11 +43,11 @@ export default function ServiceCard({
           height={image.height}
           priority
         />
-        <h3 className="text-[1.25rem] leading-[150%] font-bold md:mt-6 md:text-[1.5rem]">
+        <h3 className="text-[1.25rem] leading-[150%] font-bold md:mt-6 md:text-[1.5rem] mt-4 ">
           {title}
         </h3>
         <p
-          className="text-[0.875rem] leading-[200%] font-medium md:mt-4 md:text-[1rem]"
+          className="text-[0.875rem] leading-[200%] font-medium md:mt-4 md:text-[1rem] mt-3"
           dangerouslySetInnerHTML={{ __html: description }}
         />
       </div>
