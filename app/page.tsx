@@ -178,9 +178,19 @@ export default function Home() {
         </section>
         <section
           id="company"
-          className="mt-20 flex flex-col bg-[#FF8D8D] px-5 pt-40 text-white md:mt-30 md:px-20 md:pt-40"
+          className="mt-20 flex flex-col bg-[#FF8D8D] text-white md:mt-30"
         >
-          <div className="mx-auto w-full max-w-320">
+          <div className='flex gap-x-15'>
+            <Image
+              className="w-87 md:w-146 w-97.5 md:w-184.25"
+              src="/images/logo-clear.svg"
+              alt="copy"
+              width={390}
+              height={71}
+              priority
+            />
+          </div>
+          <div className="mx-auto w-full max-w-320 md:px-20 px-5">
             <Heading title="company" subtitle="会社概要" color="white" />
             <dl className="mt-12.5 grid gap-y-6 md:gap-x-10 lg:grid-cols-2">
               {companyItems.map((item, index) => (
