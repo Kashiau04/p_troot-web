@@ -62,36 +62,38 @@ const companyItems = [
 export default function Home() {
   return (
     <div>
-      <main>
+      <main className="relative overflow-hidden">
         <section
           id="kv"
-          className="flex min-h-screen flex-col items-center justify-center bg-white px-5 font-medium"
+          className="relative flex min-h-screen flex-col items-center justify-center bg-white px-5 font-medium"
         >
-          <Image
-            className="w-[min(10vw,40rem) md:top-[-200]] md: absolute top-[-50] left-0"
-            src="/images/yellow.svg"
-            alt="background yellow"
-            width={200}
-            height={214}
-            priority
-          />
-          <Image
-            className="w-[min(10vw,30rem) absolute top-1 right-0 md:top-[-5rem]"
-            src="/images/blue.svg"
-            alt="background blue"
-            width={195}
-            height={488.5}
-            priority
-          />
-          <Image
-            className="absolute top-60 left-0 h-157.5 w-[80vw] md:top-80"
-            src="/images/pink.svg"
-            alt="background pink"
-            width={314}
-            height={630}
-            priority
-          />
-          <div className="relative z-10">
+          <div className="absolute top-0 left-1/2 h-full min-w-390 -translate-x-1/2">
+            <Image
+              className="absolute -top-[42rem] left-18 md:-top-[90rem] md:-left-[60rem] md:w-[102.0625rem]"
+              src="/images/yellow.svg"
+              alt="background yellow"
+              width={770}
+              height={861}
+              priority
+            />
+            <Image
+              className="absolute -top-[15rem] right-0 md:-top-[32rem] md:-right-[65rem] md:w-[102.0625rem]"
+              src="/images/blue.svg"
+              alt="background blue"
+              width={770}
+              height={861}
+              priority
+            />
+            <Image
+              className="absolute top-[17rem] left-32 md:top-[25rem] md:-left-[30rem] md:w-[98.1375rem]"
+              src="/images/pink.svg"
+              alt="background pink"
+              width={762}
+              height={630}
+              priority
+            />
+          </div>
+          <div className="relative z-10 pt-15 pr-30">
             <Image
               className="w-87 md:w-146"
               src="/images/copy.svg"
@@ -109,16 +111,23 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section
-          id="about"
-          className="mt-25 flex flex-col bg-white px-5 md:mt-30 md:px-20"
-        >
-          <div className="mx-auto w-full max-w-320">
-            <div className="relative">
+
+        <section id="about" className="flex flex-col bg-white md:mt-30">
+          <div className="relative mx-auto w-full max-w-320">
+            <div className="absolute top-[14rem] -right-[41rem] rotate-260 md:top-[0rem]">
+              <Image
+                src="/images/yellow.svg"
+                alt="background yellow"
+                width={770}
+                height={861}
+                priority
+              />
+            </div>
+            <div className="absolute px-5 md:px-20">
               <Heading title="about" subtitle="私たちについて" color="white" />
             </div>
-            <div className="md:relative lg:flex lg:items-start lg:justify-between lg:px-15">
-              <p className="text-primary-brown mt-12.5 text-left text-[24px] leading-[150%] font-medium md:text-[3rem]">
+            <div className="relative px-5 md:px-20 lg:flex lg:items-start lg:justify-between lg:px-15">
+              <p className="text-primary-brown mt-27 text-left text-[1.5rem] leading-[150%] font-medium md:text-[3rem]">
                 株式会社T・ROOTは、
                 <br />
                 福祉業界に特化した
@@ -128,7 +137,7 @@ export default function Home() {
                 </span>
                 です。
               </p>
-              <p className="text-primary-brown mt-27 flex items-center justify-center text-left text-[1rem] leading-[200%] font-medium lg:mt-50">
+              <p className="text-primary-brown relative mt-27 flex items-center justify-center text-left text-[1rem] leading-[200%] font-medium lg:mt-50">
                 福祉業界の手となり足となり根となる
                 <br />
                 設立以来、多彩な採用手段を駆使し、
@@ -163,7 +172,7 @@ export default function Home() {
         >
           <div className="mx-auto w-full max-w-320">
             <Heading title="service" subtitle="サービス" color="pink" />
-            <div className="relative mt-8 flex flex-col gap-y-45 lg:flex-row lg:justify-between">
+            <div className="relative mt-8 mt-27 flex flex-col gap-y-45 lg:flex-row lg:justify-between">
               {serviceItems.map((item, index) => (
                 <ServiceCard
                   key={index}
@@ -180,17 +189,45 @@ export default function Home() {
           id="company"
           className="mt-20 flex flex-col bg-[#FF8D8D] text-white md:mt-30"
         >
-          <div className='flex gap-x-15'>
-            <Image
-              className="w-87 md:w-146 w-97.5 md:w-184.25"
-              src="/images/logo-clear.svg"
-              alt="copy"
-              width={390}
-              height={71}
-              priority
-            />
+          <div className="relative flex gap-x-15 overflow-hidden">
+            <div className="animate-marquee flex gap-x-15 px-7.5">
+              <Image
+                className="min-w-97.5 md:min-w-184.25"
+                src="/images/logo-clear.svg"
+                alt="copy"
+                width={390}
+                height={71}
+                priority
+              />
+              <Image
+                className="min-w-97.5 md:min-w-184.25"
+                src="/images/logo-clear.svg"
+                alt="copy"
+                width={390}
+                height={71}
+                priority
+              />
+            </div>
+            <div className="animate-marquee2 absolute top-0 flex gap-x-15 px-7.5">
+              <Image
+                className="min-w-97.5 md:min-w-184.25"
+                src="/images/logo-clear.svg"
+                alt="copy"
+                width={390}
+                height={71}
+                priority
+              />
+              <Image
+                className="min-w-97.5 md:min-w-184.25"
+                src="/images/logo-clear.svg"
+                alt="copy"
+                width={390}
+                height={71}
+                priority
+              />
+            </div>
           </div>
-          <div className="mx-auto w-full max-w-320 md:px-20 px-5">
+          <div className="mx-auto w-full max-w-320 px-5 md:px-20">
             <Heading title="company" subtitle="会社概要" color="white" />
             <dl className="mt-12.5 grid gap-y-6 md:gap-x-10 lg:grid-cols-2">
               {companyItems.map((item, index) => (

@@ -9,7 +9,7 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 z-10 flex w-full items-center justify-between px-8 py-4">
+    <header className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-8 py-4">
       <h1>
         <Image
           className="w-27 md:w-37"
