@@ -33,40 +33,47 @@ const navItems = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-pink relative bottom-0 left-0 z-10 w-full text-white">
-      <Image
-        className="absolute top-0"
-        src="/images/md-round.svg"
-        alt="round"
-        width={1899}
-        height={701}
-        priority
-      />
-      <div className="relative flex items-start justify-between px-4 pt-15 md:px-20 md:pt-40">
+    <footer className="relative z-10 w-full overflow-hidden bg-[#F9D5A8] pb-5">
+      <div className="relative">
         <Image
-          className="w-37.5 md:w-70.75"
-          src="/images/logo.png"
-          alt="logo"
-          width={150}
-          height={27}
+          className="w-full lg:block"
+          src="/images/md-round-top.svg"
+          alt="round"
+          width={1899}
+          height={701}
           priority
         />
-        <nav>
-          <ul className="flex flex-col gap-y-4 font-medium md:gap-y-6">
-            {navItems.map((item, index) => (
-              <li key={index} className="flex flex-col">
-                <a href={item.href} className="flex flex-col">
-                  <span className="text-[1rem] uppercase md:text-[1.25rem]">
-                    {item.label.en}
-                  </span>
-                  <span className="text-[0.75rem] md:text-[1rem]">
-                    {item.label.ja}
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+      </div>
+      <div className="justify-center px-4 relative flex flex-col pt-15 md:px-20 md:pt-40">
+        <div className="flex items-start justify-between">
+          <Image
+            className="w-37.5 md:w-70.75"
+            src="/images/logo.png"
+            alt="logo"
+            width={150}
+            height={27}
+            priority
+          />
+          <nav>
+            <ul className="flex flex-col gap-y-4 font-medium text-white md:gap-y-6">
+              {navItems.map((item, index) => (
+                <li key={index} className="flex flex-col">
+                  <a href={item.href} className="flex flex-col">
+                    <span className="text-[min(3.59vw,1rem)] leading-[150%] uppercase md:text-[1.25rem]">
+                      {item.label.en}
+                    </span>
+                    <span className="text-[min(3.59vw,0.75rem)] leading-[150%] md:text-[1rem]">
+                      {item.label.ja}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+        <p className="pt-20 text-center text-[0.875rem] text-white">
+          @2025 T・ROOT
+        </p>
       </div>
     </footer>
   );

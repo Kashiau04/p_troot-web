@@ -15,6 +15,9 @@ const serviceItems = [
       height: 46.68,
       className: 'w-14.5 md:w-20.5',
     },
+    bgImage: {
+      name: 'blueback',
+    },
   },
   {
     title: '人材定着支援',
@@ -26,6 +29,9 @@ const serviceItems = [
       width: 40,
       height: 44,
       className: 'w-10 md:w-15',
+    },
+    bgImage: {
+      name: 'yellowback',
     },
   },
 ];
@@ -56,12 +62,38 @@ const companyItems = [
 export default function Home() {
   return (
     <div>
-      <main>
+      <main className="relative overflow-hidden">
         <section
           id="kv"
-          className="flex min-h-screen flex-col items-center justify-center bg-gray-300 px-5"
+          className="relative flex min-h-screen flex-col items-center justify-center bg-white px-5 font-medium"
         >
-          <div>
+          <div className="absolute top-0 left-1/2 h-full min-w-390 -translate-x-1/2">
+            <Image
+              className="absolute -top-[42rem] left-18 object-cover md:-top-[90rem] md:-left-[60rem] md:w-[102.0625rem]"
+              src="/images/yellow.svg"
+              alt="background yellow"
+              width={770}
+              height={861}
+              priority
+            />
+            <Image
+              className="absolute -top-[15rem] right-0 md:-top-[32rem] md:-right-[65rem] md:w-[102.0625rem]"
+              src="/images/blue.svg"
+              alt="background blue"
+              width={770}
+              height={861}
+              priority
+            />
+            <Image
+              className="absolute top-[17rem] left-32 object-cover md:top-[25rem] md:-left-[30rem] md:w-[98.1375rem]"
+              src="/images/pink.svg"
+              alt="background pink"
+              width={762}
+              height={630}
+              priority
+            />
+          </div>
+          <div className="relative z-10 pt-15 pr-30">
             <Image
               className="w-87 md:w-146"
               src="/images/copy.svg"
@@ -70,7 +102,7 @@ export default function Home() {
               height={224}
               priority
             />
-            <p className="mt-10 text-left text-sm text-[min(3.59vw,0.875rem)] leading-normal text-white md:text-lg">
+            <p className="mt-10 text-left text-[min(3.59vw,0.875rem)] leading-[200%] text-white md:text-[1.125rem]">
               多彩な採用手段から採用プランニングし、
               <br />
               人材定着まで全て支援する採用総合商社。
@@ -79,14 +111,22 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section
-          id="about"
-          className="mt-25 flex flex-col bg-gray-300 px-5 md:mt-30 md:px-20"
-        >
-          <div className="mx-auto w-full max-w-320">
-            <Heading title="about" subtitle="私たちについて" color="white" />
-            <div className="lg:flex lg:items-start lg:justify-between lg:px-15">
-              <p className="text-primary-brown text-medium mt-12.5 text-left text-[24px] md:text-[3rem]">
+        <section id="about" className="flex flex-col bg-white md:mt-30">
+          <div className="relative mx-auto w-full max-w-320">
+            <div className="absolute top-[14rem] -right-[41rem] rotate-260 md:top-[0rem]">
+              <Image
+                src="/images/yellow.svg"
+                alt="background yellow"
+                width={770}
+                height={861}
+                priority
+              />
+            </div>
+            <div className="absolute px-5 md:px-20">
+              <Heading title="about" subtitle="私たちについて" color="white" />
+            </div>
+            <div className="relative px-5 md:px-20 lg:flex lg:items-start lg:justify-between lg:px-15">
+              <p className="text-primary-brown mt-27 text-left text-[1.5rem] leading-[150%] font-medium md:text-[3rem]">
                 株式会社T・ROOTは、
                 <br />
                 福祉業界に特化した
@@ -96,7 +136,7 @@ export default function Home() {
                 </span>
                 です。
               </p>
-              <p className="text-primary-brown mt-27 flex items-center justify-center text-left text-[1rem] leading-[2] md:text-[1rem] lg:mt-50">
+              <p className="text-primary-brown relative mt-27 flex items-center justify-center text-left text-[1rem] leading-[200%] font-medium lg:mt-50">
                 福祉業界の手となり足となり根となる
                 <br />
                 設立以来、多彩な採用手段を駆使し、
@@ -131,13 +171,14 @@ export default function Home() {
         >
           <div className="mx-auto w-full max-w-320">
             <Heading title="service" subtitle="サービス" color="pink" />
-            <div className="mt-8 flex flex-col gap-y-15 lg:flex-row lg:justify-between">
+            <div className="relative mt-8 mt-27 flex flex-col gap-y-45 lg:flex-row lg:justify-between">
               {serviceItems.map((item, index) => (
                 <ServiceCard
                   key={index}
                   title={item.title}
                   description={item.description}
                   image={item.image}
+                  bgImage={item.bgImage}
                 />
               ))}
             </div>
@@ -145,22 +186,56 @@ export default function Home() {
         </section>
         <section
           id="company"
-          className="bg-primary-pink mt-20 flex flex-col px-5 pt-40 text-white md:mt-30 md:px-20 md:pt-40"
+          className="mt-20 flex flex-col bg-[#FF8D8D] text-white md:mt-30"
         >
-          <div className="mx-auto w-full max-w-320">
-            <Heading
-              title="company"
-              subtitle="私たちへのお問い合わせ"
-              color="white"
-            />
+          <div className="relative flex gap-x-15 overflow-hidden">
+            <div className="animate-marquee flex gap-x-15 px-7.5">
+              <Image
+                className="min-w-97.5 md:min-w-184.25"
+                src="/images/logo-clear.svg"
+                alt="copy"
+                width={390}
+                height={71}
+                priority
+              />
+              <Image
+                className="min-w-97.5 md:min-w-184.25"
+                src="/images/logo-clear.svg"
+                alt="copy"
+                width={390}
+                height={71}
+                priority
+              />
+            </div>
+            <div className="animate-marquee2 absolute top-0 flex gap-x-15 px-7.5">
+              <Image
+                className="min-w-97.5 md:min-w-184.25"
+                src="/images/logo-clear.svg"
+                alt="copy"
+                width={390}
+                height={71}
+                priority
+              />
+              <Image
+                className="min-w-97.5 md:min-w-184.25"
+                src="/images/logo-clear.svg"
+                alt="copy"
+                width={390}
+                height={71}
+                priority
+              />
+            </div>
+          </div>
+          <div className="mx-auto w-full max-w-320 px-5 md:px-20">
+            <Heading title="company" subtitle="会社概要" color="white" />
             <dl className="mt-12.5 grid gap-y-6 md:gap-x-10 lg:grid-cols-2">
               {companyItems.map((item, index) => (
                 <div key={index} className="flex gap-x-5">
-                  <dt className="text-bold w-25 text-[0.875rem] md:text-[1.25rem]">
+                  <dt className="w-25 text-[0.875rem] leading-[150%] font-bold md:text-[1.25rem]">
                     {item.title}
                   </dt>
                   <dd
-                    className="text-medium flex-1 text-[0.875rem] md:text-[1.25rem]"
+                    className="flex-1 text-[0.875rem] leading-[150%] font-medium md:text-[1.25rem]"
                     dangerouslySetInnerHTML={{ __html: item.description }}
                   />
                 </div>
@@ -170,7 +245,7 @@ export default function Home() {
         </section>
         <section
           id="contact"
-          className="bg-primary-pink text-primary-pink flex flex-col px-5 pt-40 md:px-20 md:pt-40"
+          className="text-primary-pink flex flex-col bg-[#FF8D8D] px-5 pt-40 md:px-20 md:pt-40"
         >
           <div className="mx-auto w-full max-w-320">
             <Heading
@@ -187,7 +262,7 @@ export default function Home() {
                 height={21.93}
                 priority
               />
-              <p className="text-primary-pink text-left text-[0.875rem] md:text-[1.5rem]">
+              <p className="text-primary-pink text-left text-[min(3.59vw,0.875rem)] leading-[150%] md:text-[1.5rem]">
                 お仕事のご依頼やご質問など、
                 <br />
                 どのようなことでもお気軽に
