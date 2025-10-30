@@ -69,7 +69,7 @@ export default function Home() {
         >
           <div className="absolute top-0 left-1/2 h-full min-w-390 -translate-x-1/2">
             <Image
-              className="absolute -top-[42rem] left-18 md:-top-[90rem] md:-left-[60rem] md:w-[102.0625rem]"
+              className="absolute -top-[42rem] left-18 object-cover md:-top-[90rem] md:-left-[60rem] md:w-[102.0625rem]"
               src="/images/yellow.svg"
               alt="background yellow"
               width={770}
@@ -85,7 +85,7 @@ export default function Home() {
               priority
             />
             <Image
-              className="absolute top-[17rem] left-32 md:top-[25rem] md:-left-[30rem] md:w-[98.1375rem]"
+              className="absolute top-[17rem] left-32 object-cover md:top-[25rem] md:-left-[30rem] md:w-[98.1375rem]"
               src="/images/pink.svg"
               alt="background pink"
               width={762}
@@ -111,7 +111,6 @@ export default function Home() {
             </p>
           </div>
         </section>
-
         <section id="about" className="flex flex-col bg-white md:mt-30">
           <div className="relative mx-auto w-full max-w-320">
             <div className="absolute top-[14rem] -right-[41rem] rotate-260 md:top-[0rem]">

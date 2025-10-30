@@ -20,7 +20,7 @@ export default function Header() {
           priority
         />
       </h1>
-      <div className="font-inter text-primary-brown font-medium">
+      <div className="font-en text-primary-brown font-medium">
         <button className="justify-items-center md:hidden">
           <Image
             className="w-5"

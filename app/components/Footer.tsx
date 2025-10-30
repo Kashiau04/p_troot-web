@@ -44,7 +44,7 @@ export default function Footer() {
           priority
         />
       </div>
-      <div className="justify-centerpx-4 relative flex flex-col pt-15 md:px-20 md:pt-40">
+      <div className="justify-center px-4 relative flex flex-col pt-15 md:px-20 md:pt-40">
         <div className="flex items-start justify-between">
           <Image
             className="w-37.5 md:w-70.75"
