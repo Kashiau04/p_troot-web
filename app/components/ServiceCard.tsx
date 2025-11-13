@@ -26,9 +26,9 @@ export default function ServiceCard({
     <div className="relative">
       <div className="absolute top-[59%] left-1/2 w-80 -translate-x-1/2 -translate-y-1/2 md:w-100">
         <Image
-          className="h-full w-full"
+          className="h-full w-full object-cover"
           src={`/images/${bgImage.name}.svg`}
-          alt="background blue"
+          alt="background"
           width={350}
           height={321}
           priority

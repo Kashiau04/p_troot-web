@@ -26,12 +26,26 @@ const serviceItems = [
     image: {
       name: 'leaf-icon',
       alt: 'leaf',
-      width: 40,
-      height: 44,
+      width: 58,
+      height: 46,
       className: 'w-10 md:w-15',
     },
     bgImage: {
       name: 'yellowback',
+    },
+  },{
+    title: 'WEB制作',
+    description:
+      '入社後のフォローや教育プログラムの<br />設計を通じて、長期的な定着と組織の<br />安定化を支援します。',
+    image: {
+      name: 'web-icon',
+      alt: 'web',
+      width: 58,
+      height: 50,
+      className: 'w-14.5 md:w-20.5',
+    },
+    bgImage: {
+      name: 'pinkback',
     },
   },
 ];
@@ -123,7 +137,12 @@ export default function Home() {
               />
             </div>
             <div className="absolute px-5 md:px-20">
-              <Heading title="about" subtitle="私たちについて" color="white" />
+              <div className="block lg:hidden">
+                <Heading title="about" subtitle="私たちについて" color="pink" />
+              </div>
+              <div className="hidden lg:block">
+                <Heading title="about" subtitle="私たちについて" color="white" />
+              </div>
             </div>
             <div className="relative px-5 md:px-20 lg:flex lg:items-start lg:justify-between lg:px-15">
               <p className="text-primary-brown mt-27 text-left text-[1.5rem] leading-[150%] font-medium md:text-[3rem]">
@@ -131,7 +150,7 @@ export default function Home() {
                 <br />
                 福祉業界に特化した
                 <br />
-                <span className="text-primary-pink lg:text-white">
+                <span className="text-primary-pink md:text-white">
                   採用総合支援企業
                 </span>
                 です。
@@ -171,7 +190,7 @@ export default function Home() {
         >
           <div className="mx-auto w-full max-w-320">
             <Heading title="service" subtitle="サービス" color="pink" />
-            <div className="relative mt-8 mt-27 flex flex-col gap-y-45 lg:flex-row lg:justify-between">
+            <div className="relative mt-8 flex flex-col gap-y-45 lg:mt-27 lg:flex-row lg:flex-wrap lg:justify-between lg:gap-x-30">
               {serviceItems.map((item, index) => (
                 <ServiceCard
                   key={index}
