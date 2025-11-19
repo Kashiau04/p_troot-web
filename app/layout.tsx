@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className='lg:text-[1.290322581vw]'>
       <body className={`${inter.variable} ${zenKakuGothicNew.className}`}>
         <Header />
         {children}
